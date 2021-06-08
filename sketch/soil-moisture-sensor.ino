@@ -15,7 +15,7 @@ const char* mqttPassword = "YourMQTTPassword";
 
 // https://github.com/esp8266/Arduino/blob/master/variants/nodemcu/pins_arduino.h
 const byte analogMoisturePin = A0;
-const byte enableSensorPin = 2;
+const byte enableSensorPin = 4;
 
 // Measured myself, using this guide: https://media.digikey.com/pdf/Data%20Sheets/DFRobot%20PDFs/SEN0193_Web.pdf
 const int airValue = 910;
