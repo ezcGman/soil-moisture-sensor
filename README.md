@@ -9,8 +9,8 @@ All these parts can be easily found on AliExpress (except the PCBs ;) ):
 - 1x The PCB in this folder, printed e.g. at PCBWay
 - 1x 3.2V LiFePO4 battery in AA form factor
 - 1x AA battery holder for THT mounting
-- A capactive soil moisture sensor (some notes on capacitive vs. resistive sensors can be found a bit further down)
-- A bare ESP8266 chip, so no devoard like the famous NodeMCU or D1 Mini. The socket supports the ESP-12E/F, ESP-8 and ESP-7. But in the end, there are only two choices:
+- 1x capactive soil moisture sensor (some notes on capacitive vs. resistive sensors can be found a bit further down)
+- 1x bare ESP8266 module, so no devboard like the famous NodeMCU or D1 Mini. The socket supports the ESP-12E/F, ESP-8 and ESP-7. But in the end, there are only two choices:
   - ESP-12E/F: If you don't need an external antenna / your Wi-Fi signal is good, get this one. It's super common, easy to get and cheap.
   - ESP-7: If you do need an external antenna, get this one. Often also comes directly with an antenna! 
 - 1x NPN transistor. Probably most transistors are fine, but I suggest the 2n2222(a) which is super common and totally sufficient for this
