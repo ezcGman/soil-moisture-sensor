@@ -63,3 +63,9 @@ If you **really** want to deep dive into how these sensors work and how to prope
 
 ## How it looks
 ![How it looks](https://github.com/ezcGman/soil-moisture-sensor/blob/master/pictures/SoilMoistureSensor-PCB.jpg?raw=true)
+
+## Example application with an ESP-07 / external antenna outside (waterproof)
+*Yes, I know: This is currently an ESP-12F, because I'm waiting for the ESP-07 to arrive. But then this will be powered by an ESP-07 ;)*
+I just used an old jelly glass, drilled two holes in it and sealed them with hot glue. Therefore it's perfectly waterproof :)
+![How it looks](https://github.com/ezcGman/soil-moisture-sensor/blob/master/pictures/SoilMoistureSensor-Glass.jpg?raw=true)
+![How it looks](https://github.com/ezcGman/soil-moisture-sensor/blob/master/pictures/SoilMoistureSensor-Outside.jpg?raw=true)
