@@ -147,7 +147,7 @@ void setup() {
   mqttClient.publish("home-assistant/plant-sensors/balcony/tomato/lastUpdated", charDateTime, true);
 
   digitalWrite(enableSensorPin, LOW);
-  digitalWrite(LED_BUILTIN, LOW);
+  digitalWrite(LED_BUILTIN, HIGH);
 
   delay(100);
   ESP.deepSleep(15*60e6); // Deep Sleep for 15 minutes
