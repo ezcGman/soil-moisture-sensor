@@ -5,13 +5,16 @@
 #include <DateTime.h>
 
 
-const char* ssid     = "YourSSID";
-const char* password = "YourWiFiPassword";
+const char* wifiSsid     = "YourSSID";
+const char* wifiPassword = "YourWiFiPassword";
 
 const char* mqttServer = "YourMQTTServer";
 const int mqttPort = 1883;
 const char* mqttUser = "YourMQTTUser";
 const char* mqttPassword = "YourMQTTPassword";
+
+// Used for Wi-Fi and MQTT
+const byte maxConnTries = 15;
 
 // https://github.com/esp8266/Arduino/blob/master/variants/nodemcu/pins_arduino.h
 const byte analogMoisturePin = A0;
@@ -29,9 +32,16 @@ const int waterValue = 412;
 // Yes, that should be in the alerting systems business logic, but we use this boolean flag in the alerting. So we set this flag a little earlier.
 const int plantDryThreshold = 550;
 
-const byte maxConnTries = 15;
-
 WiFiClient wifiClient;
+/*
+ * To speed up Wi-Fi conenction, you can hardcode these values and use the
+ * alternate WiFi.config() and WiFi.begin() calls in connectWifi()
+const byte wifiChannel = 7;
+IPAddress ipEsp(192, 168, 178, 100);
+IPAddress ipRouter(192, 168, 178, 1);
+IPAddress subnet(255, 255, 255, 0);
+uint8_t macRouter[6] = { 0xAA, 0xBB, 0xCC, 0xDD, 0xEE, 0xFF };
+*/
 PubSubClient mqttClient(wifiClient);
 
 
@@ -40,11 +50,15 @@ void connectWifi() {
     int wifiConnTries = 0;
 
     WiFi.mode(WIFI_STA);
-    WiFi.setSleepMode(WIFI_LIGHT_SLEEP);
-    WiFi.begin(ssid, password);
+/*
+ * Use these two calls for faster Wi-Fi connection.
+    WiFi.config(ipEsp, ipRouter, ipRouter, subnet);
+    WiFi.begin(wifiSsid, wifiPassword, wifiChannel, macRouter);
+*/
+    WiFi.begin(wifiSsid, wifiPassword);
     while (WiFi.status() != WL_CONNECTED && wifiConnTries < maxConnTries) {
       wifiConnTries++;
-      Serial.printf("Connecting to Wi-Fi %s ...\n", ssid);
+      Serial.printf("Connecting to Wi-Fi %s ...\n", wifiSsid);
       delay(1000);
     }
 
