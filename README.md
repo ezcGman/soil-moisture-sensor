@@ -45,6 +45,10 @@ If you're familiar with ESP coding, this should all be straight forward, but som
 * Another thing is a "dry/wet threshold", which is based on my girlfriend: She said "Andy, this is now dry!". And I took this as the threshold (minus a little bit for earlier alerts) for considering a plant being dry. Note, that this may vary by plant and flower soil used.
 * Ultimately not needed, but for easier checking if the battery is empty (=no signal is sent anymore): A "last updated" timestamp also dropped into the MQTT topic
 
+### Dependencies
+* Arduino Client for MQTT, >=v2.8.0: https://pubsubclient.knolleary.net/
+* Optional (can use built-in DateTime): ESPDateTime, >=v1.0.4: https://github.com/mcxiaoke/ESPDateTime
+
 ## Schematic
 ![The Schematic](https://github.com/ezcGman/soil-moisture-sensor/blob/master/pictures/SoilMoistureSensor-Schematic.png?raw=true)
 
