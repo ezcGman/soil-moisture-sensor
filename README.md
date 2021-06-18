@@ -40,7 +40,7 @@ All these parts can be easily found on AliExpress (except the PCBs ;) ):
 ## The code
 If you're familiar with ESP coding, this should all be straight forward, but some key things in there:
 * The whole code is in setup() as the ESP goes through it when doing timed deep sleep using the GPIO16-to-RST method. Because the "wake up" is actually a reset, because the RST in is pulled low.
-* I'm using the sensor in Home Assistant through MQTT, so the code has tome MQTT logic
+* I'm using the sensor in Home Assistant through MQTT, so the code has some MQTT logic
 * Both my Wi-Fi and MQTT connect routines have some reconnect logic.
 * GPIO4 is used to switch on the sensor, so this is one of the very first things the code does. This is done by pulling it HIGH, which will switch the transistor which then makes the full circuit of the sensor complete, by letting the electrones flow from GND to the sensor.
 * I then just read from the A0 pin, convert it in C-super-complicated-style (Python developer speaking here!) to a char and dropping it into an MQTT topic.
