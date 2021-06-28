@@ -3,6 +3,9 @@
 # Soil Moisture Sensor
 This is one of my first self designed PCBs in KiCad. It's a simple circuit which makes use of an ESP8266 and a soil moisture sensor to observe your plants. The cool thing: My custom socket supports the ESP-12E/F, the ESP-8 and the cool ESP-7, which comes with an external antennna!
 
+### KiCad dependencies
+It might happen that KiCad is missing my custom footprints. You can find and download them here and then add them to KiCad: https://github.com/ezcGman/andys-footprints
+
 ## Credits
 Shoutout to Quindor from QuinLED.info, the LED master himself. He tought me a lot about KiCad, PCB design and some more electrical engineering fundamentals! While I'm still miles away from being perfect, with his help I really feel confident in what I'm doing here!
 
